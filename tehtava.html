@@ -1,0 +1,20 @@
+
+<html>
+	<body>
+		<input id= "yksi" type="text"></input>
+		<input id="kaksi" type="text"></input>
+		<button onclick="Summa()"></button>
+		<p id="tulos"></p>
+	</body>
+	
+	<script>
+		function Summa(){
+			var yksi = document.getElementById("yksi");
+			var kaski = document.getElementById("kaksi");
+			var data1 = parseFloat(yksi.value);
+			var data2 = parseFloat (kaksi.value);
+			var tulos = document.getElementById("tulos");
+			tulos.innerHTML = data1 + data2;
+		}
+	</script>
+</html>

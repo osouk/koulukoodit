@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<input type="text" id="text"> </input>
+		<button onclick="Potenssi()"> </button>
+		<p id=""> </p>
+	</body>
+	
+	<script>
+		function Potenssi(){
+			var numero = document.getElementById("text").value;
+			numero = parseFloat(numero);
+			var tulos = Math.pow(numero,numero);
+			document.getElementById("tulos").innerHTML = tulos;
+		}
+	
+	</script>
+</html>

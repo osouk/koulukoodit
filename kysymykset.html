@@ -1,0 +1,101 @@
+<html>
+	<body>
+	<div id="Kysymykset"></div>
+	
+	<p id="pisteet"></p>
+		<button onclick ="Tarkista()"> tarkista </button>
+	<!--
+		<h3> Kysymys 1 </h3>
+		<p> Minkä värisiä mustikat ovat? </p>
+		<input id = "yksi") </input>
+		
+		<h3> Kysymys 2 </h3>
+		<p>  minkä värinen on punainenviinimarja? </p>
+		<input id = "kaksi") </input>
+		
+		
+		
+		<h3> Kysymys 3 </h3>
+		<p> kuinka monta jalkaa on koiralla? </p>
+		<input id = "kolme") </input>
+		
+		
+		
+		-->
+	</body>
+	
+	<script>
+	var vastaukset = [];
+	
+	function LisaaKysymys(kysymys, vastaus){
+		vastaukset.push(vastaus); 
+		
+		var kysymysDiv = document.getElementById("Kysymykset");
+		
+		//Rakennetaan kysymyspohja
+			var kysymysNro = document.createElement("h3");
+			kysymysNro.innerHTML= "kysymys " + (vastaukset.length)
+			kysymysDiv.appendChild(kysymysNro);
+			
+			
+			
+			var kysymysTeksti = document.createElement("p");
+			kysymysTeksti.innerHTML= kysymys  + (vastaukset.length)
+			kysymysDiv.appendChild(kysymysTeksti);
+			
+			
+			var vastausKentta = document.createElement("input");
+			vastausKentta.type = "Text";
+			vastausKentta.id = "vastaus" + (vastaukset.length);
+			kysymysDiv.appendChild(vastausKentta);		
+		}
+		
+		
+		
+		var yksi = document.getElementById("yksi");
+		var vastaus = yksi.value;
+		if(vastaus == "sinisiä"){
+			pisteet ++;
+		}
+		
+		var kaksi = document.getElementById("kaksi");
+		var vastaus = kaksi.value;
+		if(vastaus == "punainen"){
+			pisteet ++;
+		}
+		var kolme = document.getElementById("kolme");
+		var vastaus = kolme.value;
+		if(vastaus == "neljä"){
+			pisteet ++;
+		}
+		//Pisteet
+		//0/3   1/3   2/3    3/3
+		var Tulos=document.getElementById("pisteet");
+		
+		Tulos.innerHTML = pisteet + "/3";
+		
+	//LisaaKysymys(" "), (" ");
+	function Tarkista(){
+		var pisteet = 0;
+		
+		for (var 1 = 0; i < vastaukset.lenght; i++){
+			//Etsii inputfieldin
+			var vastauskentta = document.getElementById("vastaus" + (i+1));
+			//verrataan vastauksia
+			if vastauskentta.value == vastaukset[i]){
+				pisteet++; //Oikein!
+			}
+		}
+	}
+	
+	var Tulos = document.getElementById("pisteet");
+	Tulos.innerHTML = pisteet + "/" + vastaukset.lenght;
+	
+	var Tulosteksti = document.getElementById("p");
+		Tulosteksti.id = "pisteet"
+		document.body.appendChild(Tulosteksti);
+		
+	
+	</script>
+	
+</html>

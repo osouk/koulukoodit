@@ -1,0 +1,24 @@
+<html>
+
+	<body> 
+		<img id="kuva"src= "tanssikissa1.png">
+		<button onclick="vaihda()"> Vaihda</button>
+	</body>
+	
+	<script>
+		var identiteetti = 0;
+		function vaihda(){
+			var kuva = document.getElementById("kuva");
+			
+			if(identiteetti == 0){
+			kuva.src = "tanssikissa1.png";
+			identiteetti = 1;
+			}
+			else{
+			kuva.src = "tanssikissa2.png";
+			identiteetti = 0;
+			}
+		}
+	</script>
+	
+</html>

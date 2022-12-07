@@ -1,0 +1,38 @@
+<html>
+	<body>
+		<table id=myTable">
+			<tr>
+				<th>ikä</th>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+	
+	<script>
+		var luvut = [12,5,7,90,1,3,5];
+		
+	//etsii tablen
+	var table = document.getElementById("myTable");
+	var laskuri = 0;
+	for (var i = 0; i < luvut.length; i++)
+	{
+		if(luvut[i] >= 18)
+		{
+			//luo uuden rivin
+			var row = table.insertRow(laskuri + 1);
+				
+			//luo td elementin
+			var cell1 = row.insertCell(0);
+	
+			//kirjoittaa dataa
+			cell1.innerHTML = Luvut[i];
+			
+			laskuri += 1;
+		} 
+		
+	}
+	</script>
+	
+</html>

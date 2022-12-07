@@ -1,0 +1,49 @@
+<html>
+
+
+	<body>
+		<input type = "text" id ="text"> </input>
+		<button id= "Nappi" onclick="LisaaTauluun()">Lisää</button>
+		<button id= "tyhjenna" onclick="tyhjenna()">tyhjenna</button>
+		<table id= "myTable"> </table>
+	</body>
+	
+	<script>
+		var taulukko = [];
+		
+		function tyhjenna(){
+		
+		// etsii taulun
+			var table = document.getElementById("myTable");
+			//tyhjentää taulun
+			table.innerHTML = "";
+			taulukko = [];
+		}
+		function LisaaTauluun(){
+			var data = document.getElementById("text");
+			
+			if(data.value != "Miisu"){
+				taulukko.push(data.value);
+			}
+			// kirjoittaa dataa
+			var table = document.getElementById("myTable");
+			//tyhjentää taulun
+			table.innerHTML = "";
+			
+			for (var i =0; i < taulukko.length; i++)
+			{
+			
+				//luo uuden rivin
+				var row = table.insertRow(i);
+					
+				//luo td elementin
+				var cell1 = row.insertCell(0);
+		
+				//kirjoittaa dataa
+				cell1.innerHTML = taulukko[i];
+		
+			}
+		}
+	</script> 
+	
+</html>

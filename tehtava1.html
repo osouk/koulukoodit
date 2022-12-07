@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<input type="text" id="text"></input>
+		<button onclick="Tervehdi()">Tervehdi</button>
+		<p id= "tervehdys"> </p>
+	
+	</body>
+	
+	
+	<script>
+		function Tervehdi(){
+			//etsitään inputfield
+			var inputField = document.getElementById("text");
+			var nimi = inputField.value; //tallenetaan nimi
+			inputField.value = "";
+			var p = document.getElementById("tervehdys");
+			p.innerHTML = "Terve " + nimi + "!";
+		}
+	</script>
+	
+	
+</html>
